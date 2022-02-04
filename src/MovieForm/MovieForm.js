@@ -1,8 +1,25 @@
 import React from 'react';
 
 export default function MovieForm({ movieFormTitle, movieFormDirector, movieFormYear, movieFormColor, setMovieFormTitle, setMovieFormDirector, setMovieFormYear, setMovieFormColor, addMovie }) {
+
+  function handleSubmit(e) {
+    e.preventDefault(); //Always
+    const movie = { //Build a movie object
+      title: movieFormTitle,
+      director: movieFormDirector,
+      year: movieFormYear,
+      color: movieFormColor
+    };
+
+    addMovie(movie); //Send movie to parent state
+    //Reset form fields to default
+    setMovieFormTitle('');
+    setMovieFormDirector('');
+    setMovieFormYear('');
+    setMovieFormColor('red');
+  }
   return (
-    <form className='movie-form'>
+    <form className='movie-form' onSubmit={handleSubmit}>
       <label>Title
         <input required value={movieFormTitle} onChange={(e) => setMovieFormTitle(e.target.value)} />
       </label>
@@ -23,6 +40,7 @@ export default function MovieForm({ movieFormTitle, movieFormDirector, movieForm
           <option value='violet'>Violet</option>
         </select>
       </label>
+      <button>Submit</button>
     </form>
   );
 }
