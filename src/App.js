@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Filter from './Filter';
 import MovieForm from './MovieForm';
@@ -18,8 +18,17 @@ function App() {
   }
 
   function deleteMovie(title) {
-
+    const index = allMovies.findIndex(movie => movie.title === title);
+    allMovies.splice(index, 1);
+    setFilterQuery('');
+    setAllMovies([...allMovies]);
   }
+
+  useEffect(() => {
+    const filteredList = allMovies.filter(movie => movie.title.includes(filterQuery));
+    setFilteredMovies(filteredList);
+
+  }, [filterQuery, allMovies]);
 
   return (
     <div className="App">

@@ -7,9 +7,17 @@
 }
 
 .movie-poster {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height:267px;
   width: 200px;
   border: 15px solid;
   word-wrap: break-word;
   margin: 10px;
+}
+
+.movie-poster button {
+  margin-top: auto ;
 }
