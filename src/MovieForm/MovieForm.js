@@ -41,7 +41,7 @@ export default function MovieForm({ movieFormTitle, movieFormDirector, movieForm
           <option value='violet'>Violet</option>
         </select>
       </label>
-      <button>Submit</button>
+      <button>Add Movie</button>
     </form>
   );
 }
