@@ -4,16 +4,16 @@ export default function MovieForm({ movieFormTitle, movieFormDirector, movieForm
   return (
     <form className='movie-form'>
       <label>Title
-        <input />
+        <input required value={movieFormTitle} onChange={(e) => setMovieFormTitle(e.target.value)} />
       </label>
       <label>Director
-        <input />
+        <input required value={movieFormDirector} onChange={(e) => setMovieFormDirector(e.target.value)} />
       </label>
       <label>Year
-        <input />
+        <input required value={movieFormYear} onChange={(e) => setMovieFormYear(e.target.value)} />
       </label>
       <label>Background Color
-        <select>
+        <select value={movieFormColor} onChange={(e) => setMovieFormColor(e.target.value)} >
           <option value='red'>Red</option>
           <option value='orange'>Orange</option>
           <option value='yellow'>Yellow</option>
