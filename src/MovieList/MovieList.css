@@ -1,0 +1,10 @@
+.movie-list {
+  display: flex;
+}
+
+.movie-poster {
+  height:267px;
+  width: 200px;
+  border: 1px solid black;
+  word-wrap: break-word;
+}

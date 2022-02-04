@@ -1,4 +1,5 @@
 import React from 'react';
+import './MovieForm.css';
 
 export default function MovieForm({ movieFormTitle, movieFormDirector, movieFormYear, movieFormColor, setMovieFormTitle, setMovieFormDirector, setMovieFormYear, setMovieFormColor, addMovie }) {
 
