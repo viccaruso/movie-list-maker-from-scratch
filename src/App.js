@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import MovieForm from './MovieForm/MovieForm';
+import MovieList from './MovieList/MovieList';
 
 function App() {
   const [allMovies, setAllMovies] = useState([]);
@@ -31,6 +32,7 @@ function App() {
         setMovieFormYear={setMovieFormYear}
         setMovieFormColor={setMovieFormColor}
         addMovie={addMovie} />
+      <MovieList movies={allMovies} />
     </div>
   );
 }
