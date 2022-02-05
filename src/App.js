@@ -3,15 +3,21 @@ import './App.css';
 import Filter from './Filter';
 import MovieForm from './MovieForm';
 import MovieList from './MovieList';
+import { useMovieForm } from './useMovieForm';
 
 function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
   const [filterQuery, setFilterQuery] = useState('');
-  const [movieFormTitle, setMovieFormTitle] = useState([]);
-  const [movieFormYear, setMovieFormYear] = useState('');
-  const [movieFormDirector, setMovieFormDirector] = useState('');
-  const [movieFormColor, setMovieFormColor] = useState('red');
+
+  const { movieFormTitle,
+    setMovieFormTitle,
+    movieFormYear,
+    setMovieFormYear,
+    movieFormDirector,
+    setMovieFormDirector,
+    movieFormColor,
+    setMovieFormColor } = useMovieForm();
 
   function addMovie(movie) {
     setAllMovies([...allMovies, movie]);
